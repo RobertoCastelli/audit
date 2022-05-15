@@ -1,5 +1,11 @@
 import React from "react"
 
+/******************/
+/**   FUNCTION   **/
+/******************/
 export const Footer = () => {
-  return <div>Footer</div>
+  /****************/
+  /**   RENDER   **/
+  /****************/
+  return <footer>copyright @ 2022 - Roberto Castelli</footer>
 }

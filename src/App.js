@@ -1,4 +1,6 @@
 import React from "react"
+// ROUTER
+import { BrowserRouter as Router } from "react-router-dom"
 // CONTENXT
 import ContextProvider from "./context/context"
 // COMPONENTS
@@ -12,16 +14,18 @@ import { Footer } from "./components/Footer"
 /******************/
 function App() {
   return (
-    <ContextProvider>
-      <div className="container">
-        <div className="content">
-          <Navbar />
-          <Header />
-          <Home />
+    <Router>
+      <ContextProvider>
+        <div className="container">
+          <div className="content">
+            <Navbar />
+            <Header />
+            <Home />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </ContextProvider>
+      </ContextProvider>
+    </Router>
   )
 }
 

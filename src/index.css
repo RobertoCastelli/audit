@@ -5,23 +5,26 @@
 |  |\/|  |   /  /_\  \   |  | |  . `  | 
 |  |  |  |  /  _____  \  |  | |  |\   | 
 |__|  |__| /__/     \__\ |__| |__| \__|  */
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
-  color: var(--brown);
+  color: var(--darkbrown);
   background-color: var(--white);
   -webkit-font-smoothing: antialiased;
 }
 * {
   box-sizing: border-box;
 }
+footer {
+  margin: auto;
+}
 :root {
   --white: #f9f4ef;
   --black: #041322;
+  --darkbrown: #716040;
   --brown: #8c7851;
   --lightbrown: #eaddcf;
   --orange: #f25042;
@@ -31,7 +34,104 @@ body {
   flex-direction: column;
   max-width: 768px;
   min-height: 100vh;
+  margin: auto;
+  padding: 0.5rem;
 }
 .content {
   flex-grow: 1;
+}
+
+/*
+.__   __.      ___   ____    ____ .______        ___      .______      
+|  \ |  |     /   \  \   \  /   / |   _  \      /   \     |   _  \     
+|   \|  |    /  ^  \  \   \/   /  |  |_)  |    /  ^  \    |  |_)  |    
+|  . `  |   /  /_\  \  \      /   |   _  <    /  /_\  \   |      /     
+|  |\   |  /  _____  \  \    /    |  |_)  |  /  _____  \  |  |\  \----.
+|__| \__| /__/     \__\  \__/     |______/  /__/     \__\ | _| `._____| */
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.img-navbar-icon {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+}
+.navbar-ul {
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+.navbar-li-link {
+  display: grid;
+  margin-left: 1rem;
+
+  font-size: small;
+}
+.navbar-li-active {
+  color: var(--orange) !important;
+  font-weight: bold;
+}
+.navbar-li-icon {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+
+/* 
+ __    __   _______     ___       _______   _______ .______      
+|  |  |  | |   ____|   /   \     |       \ |   ____||   _  \     
+|  |__|  | |  |__     /  ^  \    |  .--.  ||  |__   |  |_)  |    
+|   __   | |   __|   /  /_\  \   |  |  |  ||   __|  |      /     
+|  |  |  | |  |____ /  _____  \  |  '--'  ||  |____ |  |\  \----.
+|__|  |__| |_______/__/     \__\ |_______/ |_______|| _| `._____| */
+.header-wrapper {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* 
+ __    __    ______   .___  ___.  _______ 
+|  |  |  |  /  __  \  |   \/   | |   ____|
+|  |__|  | |  |  |  | |  \  /  | |  |__   
+|   __   | |  |  |  | |  |\/|  | |   __|  
+|  |  |  | |  `--'  | |  |  |  | |  |____ 
+|__|  |__|  \______/  |__|  |__| |_______| */
+
+.home-ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.home-li {
+  text-align: center;
+  cursor: pointer;
+  margin: 1rem;
+  padding: 1rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 0.5rem;
+  background-color: var(--lightbrown);
+  box-shadow: -5px -5px 10px var(--white), 3px 3px 15px var(--brown);
+}
+.home-li:hover {
+  transition: all 0.1s linear;
+  transform: scale(1.1);
+  color: var(--orange);
+}
+.home-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin: 3rem;
+}
+.home-ditta {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.home-tipo {
+  font-style: italic;
 }
