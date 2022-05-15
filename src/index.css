@@ -135,3 +135,23 @@ a {
 .home-tipo {
   font-style: italic;
 }
+
+/* 
+ _______ .______      .______        ______   .______      
+|   ____||   _  \     |   _  \      /  __  \  |   _  \     
+|  |__   |  |_)  |    |  |_)  |    |  |  |  | |  |_)  |    
+|   __|  |      /     |      /     |  |  |  | |      /     
+|  |____ |  |\  \----.|  |\  \----.|  `--'  | |  |\  \----.
+|_______|| _| `._____|| _| `._____| \______/  | _| `._____| */
+.error-wrapper {
+  margin: 3rem;
+  text-align: center;
+}
+.error-404 {
+  margin: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.error-url {
+  color: var(--orange);
+}
