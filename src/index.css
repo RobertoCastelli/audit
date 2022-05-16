@@ -22,7 +22,7 @@ footer {
   margin: auto;
 }
 :root {
-  --white: #fffffe;
+  --white: #f9f4ef;
   --lightbrown: #eaddcf;
   --brown: #8c7851;
   --darkbrown: #716040;
@@ -90,10 +90,7 @@ a {
 .header-wrapper {
   text-transform: uppercase;
   text-align: center;
-}
-.header-title {
-  font-size: x-large;
-  font-weight: bold;
+  color: var(--black);
 }
 .header-title,
 .header-subtitle {
@@ -196,18 +193,20 @@ a {
 }
 fieldset {
   position: relative;
+  background-color: white;
   text-align: left;
   border-radius: 0.5rem;
   border: 2px solid var(--darkbrown);
   box-shadow: -5px -5px 10px var(--white), 5px 5px 15px -3px var(--brown);
 }
 legend {
-  color: var(--orange);
   margin-left: 1rem;
+  padding: 0.5rem;
+  background-color: white;
   text-transform: uppercase;
   font-weight: bold;
+  color: var(--orange);
   border-radius: 0.5rem;
-  padding: 0 0.5rem;
 }
 fieldset::before {
   position: absolute;
@@ -217,7 +216,7 @@ fieldset::before {
   border-right-color: transparent;
   width: 0;
   height: 0;
-  top: -10px;
+  top: -18px;
   bottom: 0;
   right: 0;
   left: -2px;
@@ -230,6 +229,7 @@ select {
   outline: 0;
   padding: 1rem;
   border-bottom: 1px solid var(--darkbrown);
+  background-color: var(--white);
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
   width: 150px;
@@ -243,7 +243,7 @@ select:focus {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0.5rem;
+  row-gap: 1rem;
   align-items: center;
   justify-items: center;
 }

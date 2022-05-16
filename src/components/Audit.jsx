@@ -11,7 +11,8 @@ import { edifici } from "../database/edifici"
 /******************/
 export const Audit = () => {
   // CONTEXT
-  const { supplier } = useContext(ContextData)
+  const { orario, setOrario, giorno, setGiorno, supplier } =
+    useContext(ContextData)
 
   /****************/
   /**   RENDER   **/
@@ -38,10 +39,18 @@ export const Audit = () => {
           <div className="audit-title">generate audit</div>
           <div className="audit-input-wrapper">
             <div>
-              <input type="date" />
+              <input
+                type="date"
+                value={giorno}
+                onChange={(e) => setGiorno(e.target.value)}
+              />
             </div>
             <div>
-              <input type="time" />
+              <input
+                type="time"
+                value={orario}
+                onChange={(e) => setOrario(e.target.value)}
+              />
             </div>
             <div className="audit-edificio">
               <select>

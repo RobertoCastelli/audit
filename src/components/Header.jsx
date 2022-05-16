@@ -14,7 +14,7 @@ export const Header = () => {
   /****************/
   return (
     <div className="header-wrapper">
-      <div className="header-title">audit polimi</div>
+      <h1 className="header-title">audit polimi</h1>
       <div className="header-subtitle">audit generator</div>
       <div className="header-today">{today}</div>
       <hr />

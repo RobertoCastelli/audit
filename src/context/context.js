@@ -12,11 +12,15 @@ export const ContextData = createContext()
 const ContextProvider = (props) => {
   // DATE
   const today = new Date().toLocaleDateString()
+  const dataPicker = new Date().toISOString().substring(0, 10)
+  const time = new Date().toLocaleTimeString().substring(0, 5)
   // FIREBASE VARS
   /*  const collRefSuppliers = collection(db, "suppliers") */
   // USE STATES
-  const [suppliers, setSuppliers] = useState([])
   const [supplier, setSupplier] = useState([])
+  const [suppliers, setSuppliers] = useState([])
+  const [orario, setOrario] = useState(time)
+  const [giorno, setGiorno] = useState(dataPicker)
 
   // GET SUPPLIERS FROM FIREBASE
   /*   useEffect(() => {
@@ -39,7 +43,18 @@ const ContextProvider = (props) => {
   /**    RENDER    **/
   /******************/
   return (
-    <ContextData.Provider value={{ today, supplier, getSupplier, suppliers }}>
+    <ContextData.Provider
+      value={{
+        today,
+        orario,
+        setOrario,
+        giorno,
+        setGiorno,
+        supplier,
+        getSupplier,
+        suppliers,
+      }}
+    >
       {props.children}
     </ContextData.Provider>
   )
