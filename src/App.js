@@ -9,7 +9,8 @@ import { Header } from "./components/Header"
 import { Home } from "./components/Home"
 import { Footer } from "./components/Footer"
 import { ErrorPage } from "./components/ErrorPage"
-import { Audit } from "./components/Audit"
+import { Audit } from "./audit/Audit"
+import { Auth } from "./auth/Auth"
 
 /******************/
 /**   FUNCTION   **/
@@ -23,9 +24,10 @@ function App() {
             <Navbar />
             <Header />
             <Routes>
+              <Route path="*" element={<ErrorPage />} />
               <Route path="/" element={<Home />} />
               <Route path="/audit" element={<Audit />} />
-              <Route path="*" element={<ErrorPage />} />
+              <Route path="/auth" element={<Auth />} />
             </Routes>
           </div>
           <Footer />

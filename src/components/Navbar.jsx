@@ -2,9 +2,9 @@ import React from "react"
 // ROUTER
 import { Link, NavLink } from "react-router-dom"
 // ICONS
-import { FcKey, FcHome, FcAddDatabase } from "react-icons/fc"
+import { FcKey, FcHome } from "react-icons/fc"
 // IMAGES
-import icona from "../images/icona.png"
+import icona from "../images/poli-icona.png"
 
 /******************/
 /**   FUNCTION   **/
@@ -36,20 +36,6 @@ export const Navbar = () => {
               <FcHome size={20} />
             </div>
             <div>home</div>
-          </NavLink>
-        </li>
-
-        <li className="navbar-li-link">
-          <NavLink
-            to="/supplier"
-            className={({ isActive }) =>
-              isActive ? activeClassName : undefined
-            }
-          >
-            <div className="navbar-li-icon">
-              <FcAddDatabase size={20} />
-            </div>
-            <div>supplier</div>
           </NavLink>
         </li>
 

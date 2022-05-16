@@ -41,6 +41,26 @@ footer {
   flex-grow: 1;
 }
 
+/* 
+ _______ .______      .______        ______   .______      
+|   ____||   _  \     |   _  \      /  __  \  |   _  \     
+|  |__   |  |_)  |    |  |_)  |    |  |  |  | |  |_)  |    
+|   __|  |      /     |      /     |  |  |  | |      /     
+|  |____ |  |\  \----.|  |\  \----.|  `--'  | |  |\  \----.
+|_______|| _| `._____|| _| `._____| \______/  | _| `._____| */
+.error-wrapper {
+  margin: 3rem;
+  text-align: center;
+}
+.error-404 {
+  margin: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.error-url {
+  color: var(--orange);
+}
+
 /*
 .__   __.      ___   ____    ____ .______        ___      .______      
 |  \ |  |     /   \  \   \  /   / |   _  \      /   \     |   _  \     
@@ -130,7 +150,7 @@ a {
   box-shadow: -5px -5px 10px var(--white), 1px 1px 15px -5px var(--brown);
 }
 .home-ul img {
-  width: 80px;
+  width: 50px;
 }
 .home-title {
   text-transform: uppercase;
@@ -145,26 +165,6 @@ a {
 }
 .home-tipo {
   font-style: italic;
-}
-
-/* 
- _______ .______      .______        ______   .______      
-|   ____||   _  \     |   _  \      /  __  \  |   _  \     
-|  |__   |  |_)  |    |  |_)  |    |  |  |  | |  |_)  |    
-|   __|  |      /     |      /     |  |  |  | |      /     
-|  |____ |  |\  \----.|  |\  \----.|  `--'  | |  |\  \----.
-|_______|| _| `._____|| _| `._____| \______/  | _| `._____| */
-.error-wrapper {
-  margin: 3rem;
-  text-align: center;
-}
-.error-404 {
-  margin: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.error-url {
-  color: var(--orange);
 }
 
 /* 
@@ -197,7 +197,7 @@ fieldset {
   text-align: left;
   border-radius: 0.5rem;
   border: 2px solid var(--darkbrown);
-  box-shadow: -5px -5px 10px var(--white), 5px 5px 15px -3px var(--brown);
+  box-shadow: 3px 3px 20px -5px var(--brown);
 }
 legend {
   margin-left: 1rem;
@@ -221,6 +221,7 @@ fieldset::before {
   right: 0;
   left: -2px;
 }
+
 input[type="date"],
 input[type="time"],
 select {
@@ -229,10 +230,10 @@ select {
   outline: 0;
   padding: 1rem;
   border-bottom: 1px solid var(--darkbrown);
-  background-color: var(--white);
+  background-color: white;
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
-  width: 150px;
+  width: 140px;
 }
 input:focus,
 select:focus {
@@ -251,17 +252,93 @@ select:focus {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0.5rem;
+  width: 140px;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  color: var(--darkbrown);
+  border: 1px solid var(--darkbrown);
+  background-color: var(--lightbrown);
+  box-shadow: -5px -5px 10px var(--white), 3px 3px 15px -3px var(--brown);
+}
+.btn-audit:active {
+  transform: translateY(1px);
+  box-shadow: -5px -5px 10px var(--white), 1px 1px 15px -5px var(--brown);
+}
+
+/* 
+     ___      __    __  .___________. __    __  
+    /   \    |  |  |  | |           ||  |  |  | 
+   /  ^  \   |  |  |  | `---|  |----`|  |__|  | 
+  /  /_\  \  |  |  |  |     |  |     |   __   | 
+ /  _____  \ |  `--'  |     |  |     |  |  |  | 
+/__/     \__\ \______/      |__|     |__|  |__|  */
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  font-family: "Montserrat", sans-serif;
+  border: 0;
+  outline: 0;
   padding: 1rem;
+  border-bottom: 1px solid var(--darkbrown);
+  background-color: white;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  width: 200px;
+}
+.sign-in-input,
+.sign-up-input,
+.btn-sign-out {
+  display: grid;
+  justify-items: center;
+  margin: auto;
+  gap: 0.5rem;
+}
+.sign-in-title,
+.sign-up-title,
+.sign-out-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+.sign-in-title {
+  color: green;
+}
+.sign-up-title {
+  color: var(--darkbrown);
+}
+.sign-out-title {
+  color: brown;
+}
+.btn-sign-in {
+  background-color: rgb(0, 128, 0, 0.2) !important;
+}
+.btn-sign-up {
+  background-color: var(--lightbrown) !important;
+}
+.btn-sign-out {
+  background-color: rgb(165, 42, 42, 0.2) !important;
+}
+.btn-sign-in,
+.btn-sign-up,
+.btn-sign-out {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  width: 200px;
   border-radius: 0.5rem;
   text-transform: uppercase;
   border: 1px solid var(--darkbrown);
   background-color: var(--lightbrown);
   box-shadow: -5px -5px 10px var(--white), 3px 3px 15px -3px var(--brown);
 }
-.btn-audit:hover {
-  background-color: var(--lightbrown);
-}
-.btn-audit:active {
+.btn-sign-in:active,
+.btn-sign-up:active,
+.btn-sign-out:active {
   transform: translateY(1px);
   box-shadow: -5px -5px 10px var(--white), 1px 1px 15px -5px var(--brown);
 }

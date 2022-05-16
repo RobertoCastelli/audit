@@ -1,3 +1,7 @@
+import itaf from "../images/itaf-logo.jpg"
+import operosa from "../images/operosa-logo.jpg"
+import facility from "../images/facility-logo.png"
+
 export const ditte = [
   {
     ditta: "itaf",
@@ -10,7 +14,7 @@ export const ditte = [
       { nome: "cesare", cognome: "pastore" },
     ],
     tipo: "edile",
-    logo: "itaf",
+    src: itaf,
   },
   {
     ditta: "operosa",
@@ -22,11 +26,11 @@ export const ditte = [
       { nome: "pinco", cognome: "pallino" },
       { nome: "cesare", cognome: "pastore" },
     ],
-    tipo: "edile",
-    logo: "itaf",
+    tipo: "pulizie",
+    src: operosa,
   },
   {
-    ditta: "mst",
+    ditta: "facility",
     lotto: 6,
     cig: "123456AA",
     oggetto:
@@ -35,7 +39,7 @@ export const ditte = [
       { nome: "pinco", cognome: "pallino" },
       { nome: "cesare", cognome: "pastore" },
     ],
-    tipo: "edile",
-    logo: "itaf",
+    tipo: "elettrico",
+    src: facility,
   },
 ]

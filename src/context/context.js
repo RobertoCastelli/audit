@@ -14,25 +14,13 @@ const ContextProvider = (props) => {
   const today = new Date().toLocaleDateString()
   const dataPicker = new Date().toISOString().substring(0, 10)
   const time = new Date().toLocaleTimeString().substring(0, 5)
-  // FIREBASE VARS
-  /*  const collRefSuppliers = collection(db, "suppliers") */
   // USE STATES
   const [supplier, setSupplier] = useState([])
   const [suppliers, setSuppliers] = useState([])
   const [orario, setOrario] = useState(time)
   const [giorno, setGiorno] = useState(dataPicker)
 
-  // GET SUPPLIERS FROM FIREBASE
-  /*   useEffect(() => {
-    const getSuppliers = async () => {
-      const snapshotSuppliers = await getDocs(collRefSuppliers)
-      const suppliersList = snapshotSuppliers.docs.map((doc) => doc.data())
-      return setSuppliers(suppliersList)
-    }
-    return () => getSuppliers()
-  }, []) */
-
-  //! TEMPORARY GET SUPPLIERS
+  // GET SUPPLIERS
   useEffect(() => setSuppliers(ditte.map((ditta) => ditta)), [])
 
   // GET SUPPLIER
