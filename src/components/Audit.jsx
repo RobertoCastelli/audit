@@ -5,8 +5,6 @@ import { Link } from "react-router-dom"
 import { ContextData } from "../context/context"
 // DATABASE
 import { edifici } from "../database/edifici"
-// ICONS
-import { FcAdvance, FcInspection } from "react-icons/fc"
 
 /******************/
 /**   FUNCTION   **/
@@ -21,48 +19,45 @@ export const Audit = () => {
   return (
     <div>
       <div className="audit-wrapper">
-        <h3 className="audit-title">supplier preview</h3>
+        <div className="audit-title">supplier preview</div>
         <form>
-          <fieldset className="audit-fieldset">
-            <legend className="supplier-legend">
-              {supplier.ditta || "ditta non presente"}
-            </legend>
-            <ul>
-              <li className="audit-ditta">AQ {supplier.oggetto}</li>
-              <li className="audit-ditta">Lotto {supplier.lotto}</li>
-              <li className="audit-ditta">CIG {supplier.cig}</li>
-              {supplier.length !== 0 &&
-                supplier.referenti.map((ref, i) => (
+          <fieldset>
+            <legend>{supplier[0].ditta || "ditta non presente"}</legend>
+            <ul className="audit-ul">
+              <li>AQ {supplier[0].oggetto}</li>
+              <li>Lotto {supplier[0].lotto}</li>
+              <li>CIG {supplier[0].cig}</li>
+              {supplier[0].length !== 0 &&
+                supplier[0].referenti.map((ref, i) => (
                   <li key={i}>
                     Ref. {ref.nome || "n.n."} {ref.cognome}
                   </li>
                 ))}
             </ul>
           </fieldset>
-          <h3 className="audit-title">generate audit</h3>
-          <div className="audit-date">
-            <input type="date" />
-          </div>
-          <div className="audit-time">
-            <input type="time" />
-          </div>
-          <div className="audit-edificio">
-            <select>
-              {edifici.map((edificio) => {
-                return (
-                  <option key={edificio.label} value={edificio.value}>
-                    {edificio.label}
-                  </option>
-                )
-              })}
-            </select>
-          </div>
-          <div className="audit-buttons">
-            <Link to="/audit-page">
-              {supplier.length !== 0 && (
-                <button type="submit">
-                  <FcAdvance size={20} />
-                  <FcInspection size={20} />
+          <div className="audit-title">generate audit</div>
+          <div className="audit-input-wrapper">
+            <div>
+              <input type="date" />
+            </div>
+            <div>
+              <input type="time" />
+            </div>
+            <div className="audit-edificio">
+              <select>
+                {edifici.map((edificio) => {
+                  return (
+                    <option key={edificio.label} value={edificio.value}>
+                      {edificio.label}
+                    </option>
+                  )
+                })}
+              </select>
+            </div>
+            <Link to="/audit">
+              {supplier[0].length !== 0 && (
+                <button className="btn-audit" type="submit">
+                  generate
                 </button>
               )}
             </Link>

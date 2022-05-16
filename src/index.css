@@ -22,11 +22,11 @@ footer {
   margin: auto;
 }
 :root {
-  --white: #f9f4ef;
-  --black: #041322;
-  --darkbrown: #716040;
-  --brown: #8c7851;
+  --white: #fffffe;
   --lightbrown: #eaddcf;
+  --brown: #8c7851;
+  --darkbrown: #716040;
+  --black: #041322;
   --orange: #f25042;
 }
 .container {
@@ -66,11 +66,10 @@ footer {
 .navbar-li-link {
   display: grid;
   margin-left: 1rem;
-
   font-size: small;
 }
 .navbar-li-active {
-  color: var(--orange) !important;
+  color: var(--darkbrown);
   font-weight: bold;
 }
 .navbar-li-icon {
@@ -78,6 +77,7 @@ footer {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 /* 
@@ -91,6 +91,17 @@ a {
   text-transform: uppercase;
   text-align: center;
 }
+.header-title {
+  font-size: x-large;
+  font-weight: bold;
+}
+.header-title,
+.header-subtitle {
+  margin-bottom: 0.5rem;
+}
+.header-today {
+  text-align: right;
+}
 
 /* 
  __    __    ______   .___  ___.  _______ 
@@ -99,28 +110,30 @@ a {
 |   __   | |  |  |  | |  |\/|  | |   __|  
 |  |  |  | |  `--'  | |  |  |  | |  |____ 
 |__|  |__|  \______/  |__|  |__| |_______| */
-
 .home-ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
 }
-.home-li {
+.home-ul li {
   text-align: center;
   cursor: pointer;
   margin: 1rem;
-  padding: 1rem;
-  width: 150px;
-  height: 150px;
+  padding: 0.5rem;
+  width: 120px;
+  height: 120px;
   border-radius: 0.5rem;
+  border: 1px solid var(--darkbrown);
   background-color: var(--lightbrown);
-  box-shadow: -5px -5px 10px var(--white), 3px 3px 15px var(--brown);
+  box-shadow: -5px -5px 10px var(--white), 3px 3px 15px -3px var(--brown);
 }
-.home-li:hover {
-  transition: all 0.1s linear;
-  transform: scale(1.1);
-  color: var(--orange);
+.home-ul li:active {
+  transform: translateY(1px);
+  box-shadow: -5px -5px 10px var(--white), 1px 1px 15px -5px var(--brown);
+}
+.home-ul img {
+  width: 80px;
 }
 .home-title {
   text-transform: uppercase;
@@ -131,6 +144,7 @@ a {
 .home-ditta {
   font-weight: bold;
   text-transform: uppercase;
+  margin-top: 0.5rem;
 }
 .home-tipo {
   font-style: italic;
@@ -154,4 +168,100 @@ a {
 }
 .error-url {
   color: var(--orange);
+}
+
+/* 
+     ___      __    __   _______   __  .___________.
+    /   \    |  |  |  | |       \ |  | |           |
+   /  ^  \   |  |  |  | |  .--.  ||  | `---|  |----`
+  /  /_\  \  |  |  |  | |  |  |  ||  |     |  |     
+ /  _____  \ |  `--'  | |  '--'  ||  |     |  |     
+/__/     \__\ \______/  |_______/ |__|     |__|   */
+.audit-wrapper {
+  max-width: 320px;
+  margin: auto;
+}
+.audit-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin: 3rem;
+}
+.audit-ul {
+  padding: 0;
+  list-style: none;
+}
+.audit-ul li {
+  margin-top: 0.5rem;
+}
+fieldset {
+  position: relative;
+  text-align: left;
+  border-radius: 0.5rem;
+  border: 2px solid var(--darkbrown);
+  box-shadow: -5px -5px 10px var(--white), 5px 5px 15px -3px var(--brown);
+}
+legend {
+  color: var(--orange);
+  margin-left: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+}
+fieldset::before {
+  position: absolute;
+  content: "";
+  border: 15px solid var(--darkbrown);
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  width: 0;
+  height: 0;
+  top: -10px;
+  bottom: 0;
+  right: 0;
+  left: -2px;
+}
+input[type="date"],
+input[type="time"],
+select {
+  font-family: "Montserrat", sans-serif;
+  border: 0;
+  outline: 0;
+  padding: 1rem;
+  border-bottom: 1px solid var(--darkbrown);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  width: 150px;
+}
+input:focus,
+select:focus {
+  background-color: var(--lightbrown);
+  border-radius: 0.5rem;
+}
+.audit-input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  justify-items: center;
+}
+.btn-audit {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  border: 1px solid var(--darkbrown);
+  background-color: var(--lightbrown);
+  box-shadow: -5px -5px 10px var(--white), 3px 3px 15px -3px var(--brown);
+}
+.btn-audit:hover {
+  background-color: var(--lightbrown);
+}
+.btn-audit:active {
+  transform: translateY(1px);
+  box-shadow: -5px -5px 10px var(--white), 1px 1px 15px -5px var(--brown);
 }

@@ -3,6 +3,8 @@ import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 // CONTEXT
 import { ContextData } from "../context/context"
+// IMAGES
+import itaf from "../images/itaf-logo.png"
 
 /******************/
 /**   FUNCTION   **/
@@ -21,11 +23,8 @@ export const Home = () => {
         {suppliers.map((supplier) => {
           return (
             <Link to="/audit" key={supplier.ditta}>
-              <li
-                className="home-li"
-                onClick={() => getSupplier(supplier.ditta)}
-              >
-                <img src="https://via.placeholder.com/50" alt="logo-ditta" />
+              <li onClick={() => getSupplier(supplier.ditta)}>
+                <img src={itaf} alt="logo-ditta" />
                 <div className="home-ditta">{supplier.ditta}</div>
                 <div className="home-tipo">{supplier.tipo}</div>
               </li>
