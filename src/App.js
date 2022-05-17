@@ -7,10 +7,11 @@ import ContextProvider from "./context/context"
 import { Navbar } from "./components/Navbar"
 import { Header } from "./components/Header"
 import { Home } from "./components/Home"
+import { Auth } from "./auth/Auth"
+import { AuditGenerator } from "./audit/AuditGenerator"
+import { AuditMainPage } from "./audit/AuditMainPage"
 import { Footer } from "./components/Footer"
 import { ErrorPage } from "./components/ErrorPage"
-import { Audit } from "./audit/Audit"
-import { Auth } from "./auth/Auth"
 
 /******************/
 /**   FUNCTION   **/
@@ -24,10 +25,11 @@ function App() {
             <Navbar />
             <Header />
             <Routes>
-              <Route path="*" element={<ErrorPage />} />
               <Route path="/" element={<Home />} />
-              <Route path="/audit" element={<Audit />} />
               <Route path="/auth" element={<Auth />} />
+              <Route path="/audit" element={<AuditGenerator />} />
+              <Route path="/audit-main-page" element={<AuditMainPage />} />
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </div>
           <Footer />

@@ -13,10 +13,17 @@ import { AiOutlineAudit } from "react-icons/ai"
 /******************/
 /**   FUNCTION   **/
 /******************/
-export const Audit = () => {
+export const AuditGenerator = () => {
   // CONTEXT
-  const { orario, setOrario, giorno, setGiorno, supplier } =
-    useContext(ContextData)
+  const {
+    orario,
+    setOrario,
+    giorno,
+    setGiorno,
+    supplier,
+    setSelectedEdificio,
+    getAuditData,
+  } = useContext(ContextData)
 
   /****************/
   /**   RENDER   **/
@@ -58,7 +65,7 @@ export const Audit = () => {
                 />
               </div>
               <div className="audit-edificio">
-                <select>
+                <select onChange={(e) => setSelectedEdificio(e.target.value)}>
                   {edifici.map((edificio) => {
                     return (
                       <option key={edificio.label} value={edificio.value}>
@@ -68,8 +75,12 @@ export const Audit = () => {
                   })}
                 </select>
               </div>
-              <Link to="/audit">
-                <button className="btn-audit" type="submit">
+              <Link to="/audit-main-page">
+                <button
+                  className="btn-audit"
+                  type="submit"
+                  onClick={() => getAuditData(giorno.substring(5, 7))}
+                >
                   <AiOutlineAudit size={30} />
                 </button>
               </Link>

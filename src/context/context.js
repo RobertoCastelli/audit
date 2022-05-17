@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from "react"
-//FIREBASE
+// FIREBASE DATABASE
 import { ditte } from "../database/ditte"
+import { mesi } from "../database/mesi"
 /* import { db } from "../firebase/firebase"
 import { collection, getDocs } from "firebase/firestore" */
 // CONTEXT
@@ -19,6 +20,8 @@ const ContextProvider = (props) => {
   const [suppliers, setSuppliers] = useState([])
   const [orario, setOrario] = useState(time)
   const [giorno, setGiorno] = useState(dataPicker)
+  const [selectedEdificio, setSelectedEdificio] = useState("B1")
+  const [meseTestuale, setMeseTestuale] = useState("")
 
   // GET SUPPLIERS
   useEffect(() => setSuppliers(ditte.map((ditta) => ditta)), [])
@@ -26,6 +29,17 @@ const ContextProvider = (props) => {
   // GET SUPPLIER
   const getSupplier = (ditta) =>
     setSupplier(suppliers.filter((item) => item.ditta === ditta))
+
+  // GET AUDIT DATA
+  // --> Supplier
+  // --> Edificio
+  // --> Giorno
+  // --> Orario
+  // --> Mese testuale
+  const getAuditData = (numeroMese) => {
+    const mese = mesi.filter((mese) => mese.numero === numeroMese)
+    setMeseTestuale(mese[0].mese)
+  }
 
   /******************/
   /**    RENDER    **/
@@ -35,12 +49,16 @@ const ContextProvider = (props) => {
       value={{
         today,
         orario,
+        suppliers,
+        meseTestuale,
         setOrario,
         giorno,
         setGiorno,
         supplier,
         getSupplier,
-        suppliers,
+        selectedEdificio,
+        setSelectedEdificio,
+        getAuditData,
       }}
     >
       {props.children}
