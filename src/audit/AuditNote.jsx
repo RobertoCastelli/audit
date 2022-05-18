@@ -13,12 +13,11 @@ export const AuditNote = () => {
   /**   RENDER   **/
   /****************/
   return (
-    <div className="audit-note-wrapper">
-      <div className="audit-note-title">note</div>
+    <div>
       <textarea
         className="audit-note-textarea"
         rows="5"
-        placeholder="note"
+        placeholder="Aggiungi Note"
       ></textarea>
 
       <div className="audit-note-difformita">
