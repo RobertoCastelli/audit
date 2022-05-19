@@ -8,22 +8,22 @@ export const AuditPiePagina = () => {
   /**   RENDER   **/
   /****************/
   return (
-    <div className="audit-page-piepagina">
-      <div className="audit-page-piepagina-section">
+    <div className="audit-piepagina">
+      <section className="audit-piepagina-section">
         <div>
           <b>Area Gestione Infrastrutture e servizi</b>
         </div>
         <div>Piazza Leonardo da Vinci, 32 20133 Milano</div>
-      </div>
-      <div className="audit-page-piepagina-section">
-        <div>Tel. 02 23999300</div>
+      </section>
+      <section className="audit-piepagina-section">
+        <div>Tel 02 23999300</div>
         <div>Fax 02 23992076</div>
         <div>www.polimi.it</div>
-      </div>
-      <div className="audit-page-piepagina-section">
-        <div>Partita Iva 04376620151</div>
-        <div>Codice Fiscale 80057930150</div>
-      </div>
+      </section>
+      <section className="audit-piepagina-section">
+        <div>P.IVA 04376620151</div>
+        <div>C.F. 80057930150</div>
+      </section>
     </div>
   )
 }

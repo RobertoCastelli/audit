@@ -14,7 +14,7 @@ export const AuditReferenti = () => {
   /****************/
   return (
     <div>
-      <ul className="audit-page-referenti">
+      <ul className="audit-referenti">
         {supplier[0].referenti.map((ref, i) => {
           return (
             ref.nome !== "" && (

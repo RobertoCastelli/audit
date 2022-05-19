@@ -8,16 +8,16 @@ export const AuditFirme = () => {
   /**   RENDER   **/
   /****************/
   return (
-    <div className="audit-page-firme">
+    <div className="audit-firme-wrapper">
       <div>
-        <p>Per il Politecnico</p>
+        <div>Per il Politecnico</div>
         <br />
-        <p>__________________</p>
+        <div>__________________</div>
       </div>
       <div>
-        <p>Per l'impresa</p>
+        <div>Per l'impresa</div>
         <br />
-        <p>__________________</p>
+        <di>__________________</di>
       </div>
     </div>
   )

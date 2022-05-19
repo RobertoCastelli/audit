@@ -7,6 +7,7 @@ import { AuditVerbalizza } from "./AuditVerbalizza"
 import { AuditNote } from "./AuditNote"
 import { AuditFirme } from "./AuditFirme"
 import { AuditPiePagina } from "./AuditPiePagina"
+import { AuditButtons } from "./AuditButtons"
 
 /******************/
 /**   FUNCITON   **/
@@ -16,14 +17,17 @@ export const AuditMainPage = () => {
   /**   RENDER   **/
   /****************/
   return (
-    <div className="audit-main-page-wrapper">
-      <AuditIntestazione />
-      <AuditReferenti />
-      <AuditPremesso />
-      <AuditVerbalizza />
-      <AuditNote />
-      <AuditFirme />
-      <AuditPiePagina />
-    </div>
+    <>
+      <div className="audit-main-page-wrapper">
+        <AuditIntestazione />
+        <AuditReferenti />
+        <AuditPremesso />
+        <AuditVerbalizza />
+        <AuditNote />
+        <AuditFirme />
+        <AuditPiePagina />
+      </div>
+      <AuditButtons />
+    </>
   )
 }

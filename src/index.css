@@ -350,43 +350,77 @@ input[type="text"] {
   /  /_\  \  |  |  |  | |  |  |  ||  |     |  |     
  /  _____  \ |  `--'  | |  '--'  ||  |     |  |     
 /__/     \__\ \______/  |_______/ |__|     |__|    */
+/* MAIN */
 .audit-main-page-wrapper {
   font-family: "Courier New", Courier, monospace;
   text-align: justify;
-  background-color: white;
   padding: 0.5rem;
+  background-color: white;
 }
-.audit-page-bold-italic {
+.audit-bold-italic {
   font-weight: bold;
-  text-align: center;
-  text-decoration: underline;
   font-style: italic;
+  text-decoration: underline;
+  text-align: center;
   margin: 1rem;
 }
 
-.audit-page-intestazione {
+/* INTESTAZIONE */
+.audit-intestazione {
   display: flex;
-  align-items: flex-end;
 }
-.audit-page-logo {
+.audit-logo {
   width: 100px;
+  height: 80px;
 }
-.audit-page-oggetto {
+.audit-oggetto {
   text-transform: uppercase;
   font-weight: bold;
   margin-left: 1rem;
 }
 
-.audit-page-referenti {
+/* REFERENTI */
+.audit-referenti {
   list-style-type: decimal;
 }
 
-.audit-page-section {
+/* PREMESSO */
+.audit-section {
   margin-bottom: 1rem;
 }
 
-.audit-note-textarea {
+/* VERBALIZZA */
+.audit-verbalizza-textarea {
   width: 100%;
   margin-top: 1rem;
+}
+
+/* NOTE */
+.audit-note-wrapper section {
+  display: flex;
+  align-items: center;
+}
+.audit-note-giorno,
+.audit-note-ore {
+  border-bottom: none !important;
+}
+
+/* FIRME */
+.audit-firme-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* PIE PAGINA */
+.audit-piepagina {
+  display: flex;
+  text-align: left;
+  justify-content: space-evenly;
+  font-size: 0.7rem;
   margin-bottom: 1rem;
+}
+.audit-piepagina-section {
+  width: 25%;
 }

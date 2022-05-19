@@ -17,11 +17,11 @@ export const AuditIntestazione = () => {
   /****************/
   return (
     <>
-      <div className="audit-page-intestazione">
-        <img className="audit-page-logo" src={logo} alt="poli-logo" />
-        <div className="audit-page-oggetto">{supplier[0].oggetto}</div>
+      <div className="audit-intestazione">
+        <img className="audit-logo" src={logo} alt="poli-logo" />
+        <div className="audit-oggetto">{supplier[0].oggetto}</div>
       </div>
-      <div className="audit-page-bold-italic">
+      <div className="audit-bold-italic">
         verbale verifica del {giorno.substring(8)}-{giorno.substring(5, 7)}-
         {giorno.substring(0, 4)}
       </div>
