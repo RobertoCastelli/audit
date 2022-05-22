@@ -22,6 +22,7 @@ const ContextProvider = (props) => {
   const [giorno, setGiorno] = useState(dataPicker)
   const [selectedEdificio, setSelectedEdificio] = useState("B1")
   const [meseTestuale, setMeseTestuale] = useState("")
+  const [uploadImages, setUploadImages] = useState([])
 
   // GET SUPPLIERS
   useEffect(() => setSuppliers(ditte.map((ditta) => ditta)), [])
@@ -39,6 +40,16 @@ const ContextProvider = (props) => {
   const getAuditData = (numeroMese) => {
     const mese = mesi.filter((mese) => mese.numero === numeroMese)
     setMeseTestuale(mese[0].mese)
+  }
+
+  // UPLOAD FILE HANDLER
+  const handleUploadImages = (e) => {
+    if (e.target.files) {
+      const fileArray = Array.from(e.target.files).map((file) =>
+        URL.createObjectURL(file)
+      )
+      setUploadImages((prevImages) => prevImages.concat(fileArray))
+    }
   }
 
   /******************/
@@ -59,6 +70,8 @@ const ContextProvider = (props) => {
         selectedEdificio,
         setSelectedEdificio,
         getAuditData,
+        uploadImages,
+        handleUploadImages,
       }}
     >
       {props.children}

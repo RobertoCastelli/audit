@@ -8,6 +8,7 @@ import { AuditNote } from "./AuditNote"
 import { AuditFirme } from "./AuditFirme"
 import { AuditPiePagina } from "./AuditPiePagina"
 import { AuditButtons } from "./AuditButtons"
+import { AuditImages } from "./AuditImages"
 
 /******************/
 /**   FUNCITON   **/
@@ -24,6 +25,7 @@ export const AuditMainPage = () => {
         <AuditPremesso />
         <AuditVerbalizza />
         <AuditNote />
+        <AuditImages />
         <AuditFirme />
         <AuditPiePagina />
       </div>
