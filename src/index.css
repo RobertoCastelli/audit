@@ -404,14 +404,21 @@ input[type="text"] {
 .audit-note-ore {
   border-bottom: none !important;
 }
+
+/* IMAGES */
 .audit-images-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  place-content: center;
+}
+.audit-images-fieldset {
+  margin: 0.5rem;
+  cursor: pointer;
 }
 .audit-images-image {
-  width: 200px;
-  border: 1px solid var(--darkbrown);
+  width: 250px;
+  height: 250px;
 }
+
 /* FIRME */
 .audit-firme-wrapper {
   display: flex;

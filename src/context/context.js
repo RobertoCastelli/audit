@@ -28,8 +28,11 @@ const ContextProvider = (props) => {
   useEffect(() => setSuppliers(ditte.map((ditta) => ditta)), [])
 
   // GET SUPPLIER
-  const getSupplier = (ditta) =>
+  const getSupplier = (ditta) => {
     setSupplier(suppliers.filter((item) => item.ditta === ditta))
+    // clear images array
+    setUploadImages([])
+  }
 
   // GET AUDIT DATA
   // --> Supplier
