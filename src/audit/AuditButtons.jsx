@@ -2,7 +2,8 @@ import React, { useContext } from "react"
 // CONTEXT
 import { ContextData } from "../context/context"
 // ICONS
-import { ImImages } from "react-icons/im"
+import { ImImages, ImFilePdf } from "react-icons/im"
+
 export const AuditButtons = () => {
   // CONTEXT
   const { handleUploadImages } = useContext(ContextData)
@@ -19,7 +20,9 @@ export const AuditButtons = () => {
       <div className="audit-upload-icon">
         <ImImages size={30} />
       </div>
-      <button className="btn-pdf">PDF</button>
+      <button className="btn-pdf">
+        <ImFilePdf size={30} />
+      </button>
     </div>
   )
 }

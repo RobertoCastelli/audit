@@ -19,7 +19,7 @@ body {
   box-sizing: border-box;
 }
 footer {
-  margin: 0.5rem auto;
+  margin: 1rem auto;
 }
 :root {
   --white: #f9f4ef;
@@ -474,4 +474,11 @@ input[type="text"] {
 }
 .btn-audit-upload::-webkit-file-upload-button {
   visibility: hidden;
+}
+
+/* NO SUPPLIER LOADED */
+.audit-main-page-no-supplier-loaded {
+  text-align: center;
+  margin: 1rem;
+  font-weight: bold;
 }
