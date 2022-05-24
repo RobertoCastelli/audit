@@ -16,11 +16,16 @@ export const AuditNote = () => {
     <div className="audit-note-wrapper">
       <section>
         <div>le difformità verranno evase entro il:</div>
-        <input className="audit-note-giorno" type="date" value={giorno} />
+        <input
+          className="audit-note-giorno"
+          type="date"
+          value={giorno}
+          readOnly
+        />
       </section>
       <section>
         <div>il presente verbale viene chiuso alle ore: </div>
-        <input className="audit-note-ore" type="time" value={orario} />
+        <input className="audit-note-ore" type="time" value={orario} readOnly />
       </section>
     </div>
   )

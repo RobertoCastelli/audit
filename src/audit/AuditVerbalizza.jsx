@@ -15,10 +15,10 @@ export const AuditVerbalizza = () => {
         POS e che siano state svolte secondo le modalità contrattuali previse:
       </div>
       <textarea
+        readOnly
         className="audit-verbalizza-textarea"
         rows="5"
         placeholder="Aggiungi Note"
-        div
       ></textarea>
     </div>
   )

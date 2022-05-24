@@ -17,7 +17,7 @@ export const AuditFirme = () => {
       <div>
         <div>Per l'impresa</div>
         <br />
-        <di>__________________</di>
+        <div>__________________</div>
       </div>
     </div>
   )

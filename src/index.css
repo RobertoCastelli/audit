@@ -19,7 +19,7 @@ body {
   box-sizing: border-box;
 }
 footer {
-  margin: auto;
+  margin: 0.5rem auto;
 }
 :root {
   --white: #f9f4ef;
@@ -248,7 +248,7 @@ select:focus {
   align-items: center;
   justify-items: center;
 }
-.btn-audit {
+.btn-audit-generator {
   cursor: pointer;
   border: none;
   outline: none;
@@ -261,7 +261,7 @@ select:focus {
   background-color: var(--lightbrown);
   box-shadow: -5px -5px 10px var(--white), 3px 3px 15px -3px var(--brown);
 }
-.btn-audit:active {
+.btn-audit-generator:active {
   transform: translateY(1px);
   box-shadow: -5px -5px 10px var(--white), 1px 1px 15px -5px var(--brown);
 }
@@ -437,4 +437,41 @@ input[type="text"] {
 }
 .audit-piepagina-section {
   width: 25%;
+}
+
+/* BTN UPLOAD */
+.audit-upload-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+.btn-audit-upload,
+.btn-pdf {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  width: 140px;
+  height: 50px;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  color: var(--darkbrown);
+  border: 1px solid var(--darkbrown);
+  background-color: var(--lightbrown);
+  box-shadow: -5px -5px 10px var(--white), 3px 3px 15px -3px var(--brown);
+}
+.audit-upload-icon {
+  position: absolute;
+  left: 140px;
+  top: 10px;
+}
+.btn-audit-upload:active {
+  transform: translateY(1px);
+  box-shadow: -5px -5px 10px var(--white), 1px 1px 15px -5px var(--brown);
+}
+.btn-audit-upload::-webkit-file-upload-button {
+  visibility: hidden;
 }

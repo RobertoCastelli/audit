@@ -77,7 +77,7 @@ export const AuditGenerator = () => {
               </div>
               <Link to="/audit-main-page">
                 <button
-                  className="btn-audit"
+                  className="btn-audit-generator"
                   type="submit"
                   onClick={() => getAuditData(giorno.substring(5, 7))}
                 >
