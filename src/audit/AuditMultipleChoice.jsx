@@ -3,7 +3,7 @@ import React, { useContext } from "react"
 import { ContextData } from "../context/context"
 
 export const AuditMultipleChoice = () => {
-  const { auditElettrico } = useContext(ContextData)
+  const { auditElettrico, handleChange } = useContext(ContextData)
 
   return (
     <div className="audit-check-wrapper">
@@ -32,13 +32,28 @@ export const AuditMultipleChoice = () => {
                 <td className="audit-check-intervento">{elem.intervento}</td>
                 <td className="audit-check-periodicita">{elem.periodicita}</td>
                 <td className="audit-check-eseguito" id={elem.id}>
-                  <input type="radio" name={elem.id} value="1" />
+                  <input
+                    type="radio"
+                    name={elem.id}
+                    value="1"
+                    onChange={(e) => handleChange(elem.id, e.target.value)}
+                  />
                 </td>
                 <td className="audit-check-eseguito" id={elem.id}>
-                  <input type="radio" name={elem.id} value="-1" />
+                  <input
+                    type="radio"
+                    name={elem.id}
+                    value="-1"
+                    onChange={(e) => handleChange(elem.id, e.target.value)}
+                  />
                 </td>
                 <td className="audit-check-eseguito" id={elem.id}>
-                  <input type="radio" name={elem.id} value="0" />
+                  <input
+                    type="radio"
+                    name={elem.id}
+                    value="0"
+                    onChange={(e) => handleChange(elem.id, e.target.value)}
+                  />
                 </td>
               </tr>
             )

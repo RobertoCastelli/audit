@@ -27,17 +27,21 @@ const ContextProvider = (props) => {
   const [meseTestuale, setMeseTestuale] = useState("")
   const [uploadImages, setUploadImages] = useState([])
 
+  const [result, setResult] = useState(0)
+  const [multipleChoice, setMultipleChoice] = useState([])
+  const [radioState, setRadioState] = useState([])
+
   // GET SUPPLIERS
   useEffect(() => setSuppliers(ditte.map((ditta) => ditta)), [])
 
-  // GET SUPPLIER
+  // GET SUPPLIER (Home.jsx)
   const getSupplier = (ditta) => {
     setSupplier(suppliers.filter((item) => item.ditta === ditta))
     // clear images array
     setUploadImages([])
   }
 
-  // GET AUDIT DATA
+  // GET AUDIT DATA (AuditGenerator.jsx)
   // --> Supplier
   // --> Edificio
   // --> Giorno
@@ -48,7 +52,7 @@ const ContextProvider = (props) => {
     setMeseTestuale(mese[0].mese)
   }
 
-  // UPLOAD FILE HANDLER
+  // UPLOAD IMAGES (AuditButtons.jsx)
   const handleUploadImages = (e) => {
     if (e.target.files) {
       const fileArray = Array.from(e.target.files).map((file) =>
@@ -58,11 +62,38 @@ const ContextProvider = (props) => {
     }
   }
 
-  // PDF
+  // CREATE PDF (AuditButtons.jsx)
   const componentRef = useRef()
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   })
+
+  // CALCULATE RESULT (AuditMultipleChoice.jsx)
+  // 1. --> crea un array copia di 0 dall'origine
+  useEffect(() => {
+    Array.isArray(auditElettrico) &&
+      setRadioState(new Array(auditElettrico.length).fill(0))
+  }, [])
+  // 2. --> handleChange i valori radio
+  const handleChange = (position, valore) => {
+    // 3. --> sostituisci i valori copia nell'array origine
+    setRadioState(
+      radioState.map((radio, i) =>
+        position === i + 1 ? (radio = valore) : radio
+      )
+    )
+  }
+  // 4. --> calcola risultato
+  const calculateResult = () => {
+    /*   const denominatore = filteredZero.length
+    const numeratore = filteredZero.reduce(
+      (a, b) => parseInt(a) + parseInt(b),
+      0
+    )
+    const c = Math.floor((numeratore / denominatore) * 100) */
+    console.log(radioState)
+  }
+  calculateResult()
 
   /******************/
   /**    RENDER    **/
@@ -87,6 +118,8 @@ const ContextProvider = (props) => {
         componentRef,
         handlePrint,
         auditElettrico,
+        handleChange,
+        result,
       }}
     >
       {props.children}

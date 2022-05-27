@@ -1,5 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
+// CONTEXT
+import { ContextData } from "../context/context"
 
 export const AuditResult = () => {
-  return <div className="audit-result">0</div>
+  // CONTEXT
+  const { result } = useContext(ContextData)
+
+  return <div className="audit-result">{result}</div>
 }
