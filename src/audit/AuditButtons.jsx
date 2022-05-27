@@ -6,7 +6,7 @@ import { ImImages, ImFilePdf } from "react-icons/im"
 
 export const AuditButtons = () => {
   // CONTEXT
-  const { handleUploadImages } = useContext(ContextData)
+  const { handleUploadImages, handlePrint } = useContext(ContextData)
   return (
     <div className="audit-upload-wrapper">
       <input
@@ -20,7 +20,7 @@ export const AuditButtons = () => {
       <div className="audit-upload-icon">
         <ImImages size={30} />
       </div>
-      <button className="btn-pdf">
+      <button className="btn-pdf" onClick={handlePrint}>
         <ImFilePdf size={30} />
       </button>
     </div>

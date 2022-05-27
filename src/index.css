@@ -5,6 +5,7 @@
 |  |\/|  |   /  /_\  \   |  | |  . `  | 
 |  |  |  |  /  _____  \  |  | |  |\   | 
 |__|  |__| /__/     \__\ |__| |__| \__|  */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 body {
   margin: 0;
@@ -48,6 +49,7 @@ footer {
 |   __|  |      /     |      /     |  |  |  | |      /     
 |  |____ |  |\  \----.|  |\  \----.|  `--'  | |  |\  \----.
 |_______|| _| `._____|| _| `._____| \______/  | _| `._____| */
+
 .error-wrapper {
   margin: 3rem;
   text-align: center;
@@ -68,6 +70,7 @@ footer {
 |  . `  |   /  /_\  \  \      /   |   _  <    /  /_\  \   |      /     
 |  |\   |  /  _____  \  \    /    |  |_)  |  /  _____  \  |  |\  \----.
 |__| \__| /__/     \__\  \__/     |______/  /__/     \__\ | _| `._____| */
+
 .navbar-wrapper {
   display: flex;
   justify-content: space-between;
@@ -107,6 +110,7 @@ a {
 |   __   | |   __|   /  /_\  \   |  |  |  ||   __|  |      /     
 |  |  |  | |  |____ /  _____  \  |  '--'  ||  |____ |  |\  \----.
 |__|  |__| |_______/__/     \__\ |_______/ |_______|| _| `._____| */
+
 .header-wrapper {
   text-transform: uppercase;
   text-align: center;
@@ -127,6 +131,7 @@ a {
 |   __   | |  |  |  | |  |\/|  | |   __|  
 |  |  |  | |  `--'  | |  |  |  | |  |____ 
 |__|  |__|  \______/  |__|  |__| |_______| */
+
 .home-ul {
   display: flex;
   flex-wrap: wrap;
@@ -174,6 +179,7 @@ a {
 |  | |_ | |   __|  |  . `  |          
 |  |__| | |  |____ |  |\   |      
  \______| |_______||__| \__|  */
+
 .audit-wrapper {
   max-width: 320px;
   margin: auto;
@@ -221,7 +227,6 @@ fieldset::before {
   right: 0;
   left: -2px;
 }
-
 input[type="date"],
 input[type="time"],
 select {
@@ -350,11 +355,12 @@ input[type="text"] {
   /  /_\  \  |  |  |  | |  |  |  ||  |     |  |     
  /  _____  \ |  `--'  | |  '--'  ||  |     |  |     
 /__/     \__\ \______/  |_______/ |__|     |__|    */
+
 /* MAIN */
 .audit-main-page-wrapper {
   font-family: "Courier New", Courier, monospace;
   text-align: justify;
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: white;
 }
 .audit-bold-italic {
@@ -395,6 +401,40 @@ input[type="text"] {
   margin-top: 1rem;
 }
 
+/* MULTIPLE CHOICE */
+.audit-check-title {
+  margin: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+th,
+td {
+  border: 1px solid var(--darkbrown);
+}
+th {
+  background-color: var(--lightbrown);
+  text-align: center;
+  padding: 0.5rem;
+}
+tr:nth-child(even) {
+  background-color: var(--white);
+}
+td {
+  height: 100px;
+}
+.audit-check-intervento {
+  padding: 0.3rem;
+}
+.audit-check-periodicita,
+.audit-check-eseguito,
+.audit-check-id {
+  text-align: center;
+}
+.audit-check-eseguito input[type="radio"] {
+  padding: 3rem;
+}
+
 /* NOTE */
 .audit-note-wrapper section {
   display: flex;
@@ -411,7 +451,6 @@ input[type="text"] {
   place-content: center;
 }
 .audit-images-fieldset {
-  margin: 0.5rem;
   cursor: pointer;
 }
 .audit-images-image {
@@ -421,10 +460,13 @@ input[type="text"] {
 
 /* FIRME */
 .audit-firme-wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  margin: 3rem;
+}
+.audit-firme-wrapper div {
+  margin: 0.5rem;
 }
 
 /* PIE PAGINA */
@@ -439,7 +481,7 @@ input[type="text"] {
   width: 25%;
 }
 
-/* BTN UPLOAD */
+/* BTN UPLOAD & PDF */
 .audit-upload-wrapper {
   position: relative;
   display: flex;

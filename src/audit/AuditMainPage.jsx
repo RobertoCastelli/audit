@@ -4,12 +4,12 @@ import { AuditIntestazione } from "./AuditIntestazione"
 import { AuditReferenti } from "./AuditReferenti"
 import { AuditPremesso } from "./AuditPremesso"
 import { AuditVerbalizza } from "./AuditVerbalizza"
+import { AuditMultipleChoice } from "./AuditMultipleChoice"
 import { AuditNote } from "./AuditNote"
 import { AuditFirme } from "./AuditFirme"
 import { AuditPiePagina } from "./AuditPiePagina"
 import { AuditButtons } from "./AuditButtons"
 import { AuditImages } from "./AuditImages"
-
 // CONTEXT
 import { ContextData } from "../context/context"
 
@@ -18,18 +18,20 @@ import { ContextData } from "../context/context"
 /******************/
 export const AuditMainPage = () => {
   // CONTEXT
-  const { supplier } = useContext(ContextData)
+  const { supplier, componentRef } = useContext(ContextData)
+
   /****************/
   /**   RENDER   **/
   /****************/
   return (
     <>
       {supplier.length !== 0 ? (
-        <div className="audit-main-page-wrapper">
+        <div className="audit-main-page-wrapper" ref={componentRef}>
           <AuditIntestazione />
           <AuditReferenti />
           <AuditPremesso />
           <AuditVerbalizza />
+          <AuditMultipleChoice />
           <AuditNote />
           <AuditImages />
           <AuditFirme />

@@ -14,12 +14,6 @@ export const AuditVerbalizza = () => {
         che sono state verificate le seguenti attività programmate previste dal
         POS e che siano state svolte secondo le modalità contrattuali previse:
       </div>
-      <textarea
-        readOnly
-        className="audit-verbalizza-textarea"
-        rows="5"
-        placeholder="Aggiungi Note"
-      ></textarea>
     </div>
   )
 }

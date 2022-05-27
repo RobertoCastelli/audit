@@ -14,6 +14,12 @@ export const AuditNote = () => {
   /****************/
   return (
     <div className="audit-note-wrapper">
+      <textarea
+        readOnly
+        className="audit-verbalizza-textarea"
+        rows="5"
+        placeholder="Aggiungi Note"
+      ></textarea>
       <section>
         <div>le difformità verranno evase entro il:</div>
         <input

@@ -1,7 +1,10 @@
-import React, { useState, useEffect, createContext } from "react"
+import React, { useState, useEffect, useRef, createContext } from "react"
 // FIREBASE DATABASE
 import { ditte } from "../database/ditte"
 import { mesi } from "../database/mesi"
+import { auditElettrico } from "../database/auditElettrico"
+// PDF
+import { useReactToPrint } from "react-to-print"
 /* import { db } from "../firebase/firebase"
 import { collection, getDocs } from "firebase/firestore" */
 // CONTEXT
@@ -55,6 +58,12 @@ const ContextProvider = (props) => {
     }
   }
 
+  // PDF
+  const componentRef = useRef()
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  })
+
   /******************/
   /**    RENDER    **/
   /******************/
@@ -75,6 +84,9 @@ const ContextProvider = (props) => {
         getAuditData,
         uploadImages,
         handleUploadImages,
+        componentRef,
+        handlePrint,
+        auditElettrico,
       }}
     >
       {props.children}
