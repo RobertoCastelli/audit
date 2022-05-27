@@ -5,6 +5,7 @@ import { AuditReferenti } from "./AuditReferenti"
 import { AuditPremesso } from "./AuditPremesso"
 import { AuditVerbalizza } from "./AuditVerbalizza"
 import { AuditMultipleChoice } from "./AuditMultipleChoice"
+import { AuditResult } from "./AuditResult"
 import { AuditNote } from "./AuditNote"
 import { AuditFirme } from "./AuditFirme"
 import { AuditPiePagina } from "./AuditPiePagina"
@@ -32,6 +33,7 @@ export const AuditMainPage = () => {
           <AuditPremesso />
           <AuditVerbalizza />
           <AuditMultipleChoice />
+          <AuditResult />
           <AuditNote />
           <AuditImages />
           <AuditFirme />

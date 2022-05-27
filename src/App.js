@@ -40,3 +40,8 @@ function App() {
 }
 
 export default App
+
+/**
+ * TODO: PDF break page
+ * TODO: Delete uploaded image
+ */

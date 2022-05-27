@@ -395,12 +395,6 @@ input[type="text"] {
   margin-bottom: 1rem;
 }
 
-/* VERBALIZZA */
-.audit-verbalizza-textarea {
-  width: 100%;
-  margin-top: 1rem;
-}
-
 /* MULTIPLE CHOICE */
 .audit-check-title {
   margin: 3rem;
@@ -435,6 +429,15 @@ td {
   padding: 3rem;
 }
 
+/* RESULT */
+.audit-result {
+  text-align: center;
+  margin: 1rem;
+  font-weight: bold;
+  font-size: xx-large;
+  color: var(--orange);
+}
+
 /* NOTE */
 .audit-note-wrapper section {
   display: flex;
@@ -444,11 +447,15 @@ td {
 .audit-note-ore {
   border-bottom: none !important;
 }
+.audit-note-textarea {
+  width: 100%;
+}
 
 /* IMAGES */
 .audit-images-wrapper {
   display: grid;
   place-content: center;
+  gap: 1rem;
 }
 .audit-images-fieldset {
   cursor: pointer;

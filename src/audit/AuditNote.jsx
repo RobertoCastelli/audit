@@ -16,7 +16,7 @@ export const AuditNote = () => {
     <div className="audit-note-wrapper">
       <textarea
         readOnly
-        className="audit-verbalizza-textarea"
+        className="audit-note-textarea"
         rows="5"
         placeholder="Aggiungi Note"
       ></textarea>
