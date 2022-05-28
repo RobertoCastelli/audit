@@ -29,18 +29,23 @@ const ContextProvider = (props) => {
   const time = new Date().toLocaleTimeString().substring(0, 5)
   // NAVIGATE
   const navigate = useNavigate()
-  // USE STATES
-  const [supplier, setSupplier] = useState([])
-  const [suppliers, setSuppliers] = useState([])
+  // GENERAL DATA
   const [orario, setOrario] = useState(time)
   const [giorno, setGiorno] = useState(dataPicker)
-  const [selectedEdificio, setSelectedEdificio] = useState("B1")
   const [meseTestuale, setMeseTestuale] = useState("")
+  // SUPPLIERS DATA
+  const [supplier, setSupplier] = useState([])
+  const [suppliers, setSuppliers] = useState([])
+  const [selectedEdificio, setSelectedEdificio] = useState("B1")
+  // UPLOAD IMAGES
   const [uploadImages, setUploadImages] = useState([])
+  // MULTIPLE CHOICE
   const [result, setResult] = useState(0)
   const [radioState, setRadioState] = useState([])
+  // AUTH
   const [user, setUser] = useState({ nickname: "", email: "", password: "" })
   const [displayName, setDisplayName] = useState("")
+  const [userState, setUserState] = useState(false)
 
   // GET SUPPLIERS
   useEffect(() => setSuppliers(ditte.map((ditta) => ditta)), [])
@@ -108,9 +113,13 @@ const ContextProvider = (props) => {
   // GET USER NAME WHEN LOGGED IN
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      return user
-        ? setDisplayName(auth.currentUser.displayName)
-        : setDisplayName("no user logged!")
+      if (user) {
+        setDisplayName(auth.currentUser.displayName)
+        setUserState(true)
+      } else {
+        setDisplayName("no user logged")
+        setUserState(false)
+      }
     })
   }, [user])
 
@@ -137,6 +146,7 @@ const ContextProvider = (props) => {
         })
       )
       .then(() => console.log(`${auth.currentUser.displayName} has signed up!`))
+      .then(() => setDisplayName(auth.currentUser.displayName))
       .then(() => navigate("/"))
       .catch((error) => {
         const errorCode = error.code
@@ -160,6 +170,7 @@ const ContextProvider = (props) => {
   return (
     <ContextData.Provider
       value={{
+        // GENERAL DATA
         today,
         orario,
         suppliers,
@@ -167,24 +178,30 @@ const ContextProvider = (props) => {
         setOrario,
         giorno,
         setGiorno,
+        // SUPPLIERS DATA
         supplier,
         getSupplier,
         selectedEdificio,
         setSelectedEdificio,
         getAuditData,
+        // UPLOAD IMAGES
         uploadImages,
         handleUploadImages,
+        // PDF
         componentRef,
         handlePrint,
+        // MULTIPLE CHOICE
         auditElettrico,
         handleChangeRadio,
         result,
+        // AUTH
         user,
+        userState,
+        displayName,
         handleSignOut,
         handleSignIn,
         handleSignUp,
         handleNicknameEmailPassword,
-        displayName,
       }}
     >
       {props.children}
