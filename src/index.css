@@ -120,8 +120,9 @@ a {
 .header-subtitle {
   margin-bottom: 0.5rem;
 }
-.header-today {
-  text-align: right;
+.header-content {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* 
@@ -494,7 +495,7 @@ td {
   width: 25%;
 }
 
-/* BTN UPLOAD & PDF */
+/* BTN UPLOAD  IMG & PDF */
 .audit-upload-wrapper {
   position: relative;
   display: flex;

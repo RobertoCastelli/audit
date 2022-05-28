@@ -1,11 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 // REACT ICONS
 import { BsPersonDash } from "react-icons/bs"
+// CONTEXT
+import { ContextData } from "../context/context"
 
 /******************/
 /**   FUNCTION   **/
 /******************/
 export const SignOut = () => {
+  const { handleSignOut } = useContext(ContextData)
   /****************/
   /**   RENDER   **/
   /****************/
@@ -17,6 +20,7 @@ export const SignOut = () => {
           className="btn-sign-out"
           type="button"
           style={{ color: "brown" }}
+          onClick={handleSignOut}
         >
           <BsPersonDash size={20} />
         </button>
