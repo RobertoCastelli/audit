@@ -435,6 +435,12 @@ td {
   margin: 1rem;
   font-weight: bold;
   font-size: xx-large;
+  text-transform: uppercase;
+}
+.audit-result-positivo {
+  color: green;
+}
+.audit-result-negativo {
   color: var(--orange);
 }
 

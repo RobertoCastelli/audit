@@ -28,7 +28,7 @@ const ContextProvider = (props) => {
   const [uploadImages, setUploadImages] = useState([])
 
   const [result, setResult] = useState(0)
-  const [multipleChoice, setMultipleChoice] = useState([])
+
   const [radioState, setRadioState] = useState([])
 
   // GET SUPPLIERS
@@ -76,24 +76,18 @@ const ContextProvider = (props) => {
   }, [])
   // 2. --> handleChange i valori radio
   const handleChange = (position, valore) => {
-    // 3. --> sostituisci i valori copia nell'array origine
     setRadioState(
       radioState.map((radio, i) =>
-        position === i + 1 ? (radio = valore) : radio
+        position === i + 1 ? (radio = parseInt(valore)) : radio
       )
     )
   }
-  // 4. --> calcola risultato
-  const calculateResult = () => {
-    /*   const denominatore = filteredZero.length
-    const numeratore = filteredZero.reduce(
-      (a, b) => parseInt(a) + parseInt(b),
-      0
-    )
-    const c = Math.floor((numeratore / denominatore) * 100) */
-    console.log(radioState)
-  }
-  calculateResult()
+  // 3. --> calcola risultato
+  useEffect(() => {
+    const numeratore = radioState.reduce((a, b) => a + b, 0)
+    const denominatore = radioState.length
+    setResult(Math.floor((numeratore / denominatore) * 100))
+  }, [radioState])
 
   /******************/
   /**    RENDER    **/
