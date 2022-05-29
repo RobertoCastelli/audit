@@ -7,7 +7,7 @@ import { ContextData } from "../context/context"
 /******************/
 export const AuditReferenti = () => {
   // CONTEXT
-  const { supplier } = useContext(ContextData)
+  const { supplier, displayName } = useContext(ContextData)
 
   /****************/
   /**   RENDER   **/
@@ -24,7 +24,7 @@ export const AuditReferenti = () => {
             )
           )
         })}
-        <li> - tecnico AGIS</li>
+        <li> {displayName} - tecnico AGIS</li>
       </ul>
     </div>
   )
